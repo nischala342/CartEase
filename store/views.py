@@ -18,3 +18,11 @@ def index(request):
     data['products'] = products
     data['categories'] = categories
     return render(request,'index.html',data)
+
+
+
+def signup(request):
+    if request.method == 'GET' :
+        return render(request, 'signup.html')
+    else:
+        return HttpResponse(request.POST.get('email'))
