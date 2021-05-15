@@ -8,6 +8,12 @@
             <h3 class="alert alert-light border rounded">Create An Account</h3>
             <form action="/signup" method="POST">
                 {% csrf_token %}
+
+                {% if error%}
+                <div class="alert alert-danger" role="alert">
+                  {{error}}
+                </div>
+                {% endif %}
                 <!--firstname-->
                 <div class="form-group">
                     <label for="">First Name</label>
@@ -16,7 +22,7 @@
                   <!--lastname-->
                 <div class="form-group">
                     <label for="">Last Name</label>
-                    <input type="text" name="lastname" id="" class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="lastname" id="" value = "{{values.first_name}}"class="form-control form-control-sm" placeholder="" aria-describedby="helpId">
                   </div>
                   <!--phone-->
                 <div class="form-group">
@@ -26,7 +32,7 @@
                 <!--email-->
                 <div class="form-group">
                   <label for="">Email</label>
-                  <input type="email" name="email" id="" class="form-control form-control-sm" placeholder="example@gmail.com" aria-describedby="helpId">
+                  <input required  type="email" name="email" id="" class="form-control form-control-sm" placeholder="example@gmail.com" aria-describedby="helpId">
                 </div>
                 <!--password-->
                 <div class="form-group">
