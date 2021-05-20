@@ -30,7 +30,7 @@ class Index(View):
     def get(self, request):
         cart = request.session.get('cart')
         if not cart:
-            request.session.cart = {}
+            request.session['cart'] = {}
         products = None
         categories = Category.get_all_categories()
         # return render(request, 'orders/order.html')
