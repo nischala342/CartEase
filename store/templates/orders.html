@@ -32,7 +32,11 @@
                     <td>{{order.price|currency}}</td>
                     <td>{{order.quantity}}</td>
                     <td>{{order.quantity|multiply:order.price|currency}}</td>
-                    <td>{{order.status|default:'pending'}}</td>
+                    {% if order.status %}
+                    <td><span class="label label-pill label-success">Completed</span></td>
+                    {%else%}
+                    <td><span class="label label-pill label-warning">Pending</span></td>
+                    {% endif %}
                 </tr>
 
                 {% endfor %}
