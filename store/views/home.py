@@ -50,13 +50,3 @@ class Index(View):
         data['subcategories'] = subcategories
         # print('You are: ',request.session.get('email'))
         return render(request, 'index.html', data)
-
-
-
-
-
-
-
-
-
-
