@@ -16,9 +16,24 @@
 
 				<a href="/" class="list-group-item list-group-item-action">All Products</a>
 
+
 				{% for category in categories %}
-				<a href="/?category={{category.id}}"
-					class="list-group-item list-group-item-action">{{category.name}}</a>
+				<div class="dropdown">
+  					<a class="list-group-item list-group-item-action btn btn-light dropdown-toggle" href="#!" role="button" id="dropdownMenuLink"
+    					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    						{{category.name}}
+					</a>
+
+  					<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						<a href="/?category={{category.id}}" class="dropdown-item" href="#!">All {{category.name}}</a>
+						{% for subcategory in subcategories %}
+						{% if category.name in subcategory.name %}
+    					<a href="/?subcategory={{subcategory.id}}" class="dropdown-item" href="#!">{{subcategory.name}}</a>
+						{% endif %}
+						{% endfor %}
+  					</div>
+
+				</div>
 				{% endfor %}
 			</div>
 		</div>

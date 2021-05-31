@@ -29,8 +29,7 @@ class Product(models.Model):
 
     @staticmethod
     def get_all_products_by_subcategoryid(subcategory_id,category_id):
-        products = Product.objects.filter(category=category_id)
         if subcategory_id:
-            products.objects.filter(subcategory = subcategory_id)
+            return Product.objects.filter(sub_category = subcategory_id)
         else:
-            return Product.get_all_products_by_categoryid(category_id)
+            return Product.get_all_products()
