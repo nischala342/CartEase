@@ -44,8 +44,6 @@ class Index(View):
         subcategoryID = request.GET.get('subcategory')
         if subcategoryID:
             products = Product.get_all_products_by_subcategoryid(subcategoryID, categoryID)
-        else:
-            products = Product.get_all_products()
         data = {}
         data['products'] = products
         data['categories'] = categories
