@@ -37,11 +37,15 @@ class Index(View):
         # return render(request, 'orders/order.html')
         categoryID = request.GET.get('category')
         subcategories = SubCategory.get_all_subcategories(categoryID)
+        subcategoryID = request.GET.get('subcategory')
         if categoryID:
-            products = Product.get_all_products_by_categoryid(categoryID)
+            if subcategoryID:
+                products = Product.get_all_products_by_subcategoryid(subcategoryID, categoryID)
+            else:
+                products = Product.get_all_products_by_categoryid(categoryID)
         else:
             products = Product.get_all_products()
-        subcategoryID = request.GET.get('subcategory')
+
         if subcategoryID:
             products = Product.get_all_products_by_subcategoryid(subcategoryID, categoryID)
         data = {}
