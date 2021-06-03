@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
-from django.contrib.auth.hashers import make_password, check_password
+from django.contrib.auth.hashers import check_password
 from store.models.customer import Customer
 from django.views import View
 
@@ -22,7 +22,7 @@ class Login(View):
                     return HttpResponseRedirect(Login.return_url)
                 else:
                     Login.return_url = None
-                    return redirect('Homepage')
+                    return redirect('store')
             else:
                 error_message = 'Email or Password invalid!!'
         else:

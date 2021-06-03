@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from store.models.category import Category
 from store.models.products import Product
 from django.views import View
@@ -26,9 +26,12 @@ class Index(View):
             cart = {}
             cart[product] = 1
         request.session['cart'] = cart
-        return redirect('Homepage')
+        return redirect('store')
 
     def get(self, request):
+        return HttpResponseRedirect(f'/store{request.get_full_path()[1:]}')
+
+def store(request):
         cart = request.session.get('cart')
         if not cart:
             request.session['cart'] = {}

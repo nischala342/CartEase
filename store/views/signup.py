@@ -29,7 +29,7 @@ class Signup(View):
             customer.password = make_password(customer.password)
             customer.register()
 
-            return redirect('Homepage')
+            return redirect('store')
         else:
             data = {
                 'error': error_message,
