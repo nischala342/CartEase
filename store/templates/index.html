@@ -54,21 +54,21 @@
 
 						{% if product|is_in_cart:request.session.cart %}
 						<div class="row no-gutters">
-							<form action="/#{{product.id}}" class="col-2 " method="post">
+							<form action="/home#{{product.id}}" class="col-2 " method="post">
 								{% csrf_token %}
 								<input hidden type="text" name='product' value='{{product.id}}'>
 								<input hidden type="text" name='remove' value='True'>
 								<input type="submit" value=" - " class="btn btn-block btn-light border-right">
 							</form>
 							<div class="text-center col">{{product|cart_quantity:request.session.cart}} in Cart</div>
-							<form action="/#{{product.id}}" class="col-2 " method="post">
+							<form action="/home#{{product.id}}" class="col-2 " method="post">
 								{% csrf_token %}
 								<input hidden type="text" name='product' value='{{product.id}}'>
 								<input type="submit" value=" + " class="btn btn-block btn-light border-left">
 							</form>
 						</div>
 						{% else %}
-						<form action="/#{{product.id}}" method="POST" class="btn-block">
+						<form action="/home#{{product.id}}" method="POST" class="btn-block">
 							{% csrf_token %}
 							<input hidden type="text" name='product' value='{{product.id}}'>
 							<input type="submit" class="float-right btn btn-light  form-control"
