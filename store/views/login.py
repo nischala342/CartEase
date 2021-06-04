@@ -17,10 +17,10 @@ class Login(View):
         if customer:
             flag = check_password(password, customer.password)
             if flag:
+                send_email(email, "Your Login to the Website is Successful", "Regarding Login activity to EBuy Website")
                 request.session['customer'] = customer.id
 
                 if Login.return_url:
-                    send_email(email,"Your Login to the Website is Successful","Regarding Login activity to EBuy Website")
                     return HttpResponseRedirect(Login.return_url)
                 else:
                     Login.return_url = None
