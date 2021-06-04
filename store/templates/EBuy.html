@@ -11,21 +11,114 @@
 			body {
   				background-image: url('https://wallpaperaccess.com/full/2483962.jpg');
 			}
+			.btn {background-color: #555555;}
+			.btn {border-radius: 50%;}
+			.btn:hover {
+			background-color: black;
+			}
+			.footer-dark {
+  padding:10px 0;
+  color:#f0f9ff;
+  background-color:#282d32;
+}
+
+.footer-dark h3 {
+  margin-top:0;
+  margin-bottom:3px;
+  font-weight:bold;
+  font-size:16px;
+}
+
+.footer-dark ul {
+  padding:0;
+  list-style:none;
+  line-height:1.6;
+  font-size:14px;
+  margin-bottom:0;
+}
+
+.footer-dark ul a {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+.footer-dark ul p {
+  color:inherit;
+  text-decoration:none;
+  opacity:0.6;
+}
+.footer-dark ul a:hover {
+  opacity:0.8;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item:not(.social) {
+    text-align:center;
+    padding-bottom:0;
+  }
+}
+
+.footer-dark .item.text {
+  margin-bottom:0;
+}
+
+@media (max-width:767px) {
+  .footer-dark .item.text {
+    margin-bottom:0;
+  }
+}
+
+.footer-dark .item.text p {
+  opacity:0.6;
+  margin-bottom:0;
+}
+.footer-dark .copyright {
+  text-align:center;
+  padding-top:0;
+  opacity:0.3;
+  font-size:13px;
+  margin-bottom:0;
+}
 		</style>
 	</head>
 	<body>
-	<div style="
-width: 300px;
-height: 300px;
-display: flex;
-justify-content: center;
-align-items: center; " class="container">
-		<div class="btn-group">
+	<div style="margin: 0px;" class="container">
+		<div class="centered">
 			<p>
-				<a  style="margin-top: 250px;" href="/store" class="btn btn-secondary btn-lg active rounded" role="button" aria-pressed="true">Home</a>
-			<br>
-				<a style="margin: 5px;" href="/feedback" class="btn btn-secondary btn-lg active rounded" role="button" aria-pressed="true">Feedback</a></p>
+				<a  style="margin-top: 350px; border-radius: 12px;" href="/store" class="btn btn-secondary btn-lg active rounded" role="button" aria-pressed="true">Home</a>
+			<span></span>
+				<a style="margin-top: 350px; margin-left: 5px; border-radius: 12px;" href="/feedback" class="btn btn-secondary btn-lg active rounded" role="button" aria-pressed="true">Feedback</a></p>
 	</div>
+		<div style="font-family: URW Chancery L, cursive; font-weight: bold; font-size: 30px; left: 0px;"class="bottom-left">
+			<p>Stay Home and Stay Safe:) <br>Shop Online!<br> Stay Tuned.....<br> For Something Awesome!!!</p>
+		</div>
 	</div>
+	<div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="/store">Store</a></li>
+                            <li><a href="/signup">Signup</a></li>
+                            <li><a href="/login">Login</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Contacts</h3>
+                        <ul>
+							<li><p>Email: <a href="mailto:ebuy.vce@gmail.com">ebuy.vce@gmail.com</a><br>Phone: <a href="sms:9876543210;?&body=Question%20from%20mywebsite.com.%20%20MY%20MESSAGE%20-%20" title="">9876543210</a></p></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>EBuy</h3>
+                        <p>Sale of physical products online and commercial transaction that is facilitated through the internet.</p>
+                    </div>
+                </div>
+                <p class="copyright">EBuy © 2021</p>
+            </div>
+        </footer>
+    </div>
 	</body>
 	</html>
