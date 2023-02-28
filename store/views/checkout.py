@@ -20,7 +20,7 @@ class CheckOut(View):
             order = Order(customer=Customer(id=customer), product=product, price=product.price, address=address,
                           phone=phone, quantity=cart.get(str(product.id)))
             order.placeOrder()
-            send_email(email,"Order Placed Successfully","Regarding your EBuy Order")
+            #send_email(email,"Order Placed Successfully","Regarding your EBuy Order")
         request.session['cart'] = {}
 
         return redirect('cart')

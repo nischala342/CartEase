@@ -17,7 +17,7 @@ class Login(View):
         if customer:
             flag = check_password(password, customer.password)
             if flag:
-                send_email(email, "Your Login to the Website is Successful", "Regarding Login activity to EBuy Website")
+                #send_email(email, "Your Login to the Website is Successful", "Regarding Login activity to EBuy Website")
                 request.session['customer'] = customer.id
 
                 if Login.return_url:
